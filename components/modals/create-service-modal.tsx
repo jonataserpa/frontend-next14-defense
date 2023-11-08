@@ -40,9 +40,9 @@ const formSchema = z.object({
     .string()
     .min(1, { message: "Serviço é obrigatório" })
     .refine((name) => name !== "general", {
-      message: "Status name cannot be 'general'",
+      message: "Status não pode ser 'generico'",
     }),
-  status: z.nativeEnum(StatusType),
+  status: z.string().min(1, { message: "Status é obrigatório" }),
 });
 
 export const CreateServiceModal = () => {
@@ -56,7 +56,7 @@ export const CreateServiceModal = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      status: StatusType.UP,
+      status: "",
     }
   });
 
@@ -72,17 +72,16 @@ export const CreateServiceModal = () => {
 
    const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const url = qs.stringifyUrl({
-        url: "/services",
-        query: { serverId: params?.serverId },
-      });
       const service: IDefenseProps = {
         name: values.name,
         status: values.status,
+        color: "text-violet-500",
+        bgColor: "bg-violet-500/10"
       }
       await ServiceGateway.create(service);
       form.reset();
       router.refresh();
+      router.push('/dashboard');
       onClose();
     } catch (error) {
       console.log(error);
@@ -111,8 +110,7 @@ export const CreateServiceModal = () => {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    
-                    <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
+                    <FormLabel>
                       Descrição
                     </FormLabel>
                     <FormControl>
@@ -120,7 +118,7 @@ export const CreateServiceModal = () => {
                       <Input
                         disabled={isLoading}
                         className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
-                        placeholder="Enter channel name"
+                        placeholder="Descrição do serviço"
                         {...field}
                       />
                     </FormControl>
@@ -133,26 +131,22 @@ export const CreateServiceModal = () => {
                 name="status"
                 render={({ field }) => (
                   <FormItem>
-                    
-                    <FormLabel>Status Type</FormLabel>
+                    <FormLabel>Status</FormLabel>
                     <Select
                       disabled={isLoading}
                       onValueChange={field.onChange}
                     >
-                      
                       <FormControl>
                         <SelectTrigger className="bg-zinc-300/50 border-0 focus:ring-0 text-black ring-offset-0 focus:ring-offset-0 capitalize outline-none">
-                          <SelectValue placeholder="Select a channel type" />
+                          <SelectValue placeholder="Selecione" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
                         {statusSelect.map((type) => (
                           <SelectItem
                             key={type.id}
-                            value={type.description.toString()}
-                            className="capitalize"
+                            value={type.description}
                           >
-                            
                             {type.description}
                           </SelectItem>
                         ))}
@@ -166,7 +160,7 @@ export const CreateServiceModal = () => {
             <DialogFooter className="bg-gray-100 px-6 py-4">
               
               <Button variant="default" disabled={isLoading}>
-                Create
+                Salvar
               </Button>
             </DialogFooter>
           </form>

@@ -39,7 +39,7 @@ export const handleApiErrors = (error: AxiosError, message: string) => {
 
 const getAll = async (): Promise<TServicesWithTotalCount | Error> => {
   try {
-    const url = "/services";
+    const url = "/services?_sort=id&_order=desc";
     const { data } = await ApiService.get(url);
 
     if (data) {

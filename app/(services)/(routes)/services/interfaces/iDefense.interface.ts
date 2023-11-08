@@ -9,7 +9,7 @@ export enum StatusType {
 export interface IDefenseProps {
     id?: number;
     name: string;
-    status: StatusType;
+    status: string;
     icon?: LucideIcon;
     href?: string;
     color?: string;

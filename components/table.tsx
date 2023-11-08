@@ -2,14 +2,12 @@ import { IRows } from "@/app/(services)/(routes)/services/interfaces/iRows.inter
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ChevronDown, Delete, Pencil, Plus } from "lucide-react";
-import { Button } from "./ui/button";
+import { Delete, Pencil, Plus } from "lucide-react";
 import { ActionTooltip } from "./action-tooltip";
 import { useModal } from "./hooks/use-modal-store";
 
@@ -42,15 +40,15 @@ const TablePage = ({ rows, handleDelete, handleEdit }: IRows) => {
           </div>
         </p>
       </div>
-      <div className="px-4 md:px-20 lg:px-32">
+      <div className="px-4 md:px-20 lg:px-13">
         <Table>
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">ID</TableHead>
               <TableHead>Serviços</TableHead>
               <TableHead>Status</TableHead>
-              <TableHead className="w-[100px]"></TableHead>
-              <TableHead className="w-[100px]"></TableHead>
+              <TableHead className="w-[10px]"></TableHead>
+              <TableHead className="w-[10px]"></TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>

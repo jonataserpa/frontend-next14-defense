@@ -3,14 +3,17 @@ import { StatusType } from "./app/(services)/(routes)/services/interfaces/iDefen
 export const statusSelect = [
   {
     id: 1,
-    description: StatusType.UP
+    description: 'up',
+    status: StatusType.UP,
   },
   {
     id: 2,
-    description: StatusType.WARNING
+    description: 'warning',
+    status: StatusType.WARNING
   },
   {
     id: 3,
-    description: StatusType.ERROR
+    description: 'error',
+    status: StatusType.ERROR
   }
 ]
