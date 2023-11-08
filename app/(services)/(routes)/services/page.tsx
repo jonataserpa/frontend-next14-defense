@@ -5,7 +5,6 @@ import Navbar from "@/components/ui/navbar";
 import Sidebar from "@/components/ui/sidebar";
 import { IDefenseProps } from "./interfaces/iDefense.interface";
 import { useEffect, useState } from "react";
-import { services } from "@/constants";
 import { useDebounce } from "@/components/hooks";
 import { ServiceGateway } from "./gateways/serviceGateway";
 import { Environment } from "@/components/environment";
@@ -40,6 +39,7 @@ const ServicesPage = () => {
   useEffect(() => {
     setIsLoading(true);
     getAllServices();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /**

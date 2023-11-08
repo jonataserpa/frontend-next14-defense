@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { services } from "@/constants";
 import { ServiceGateway } from "@/app/(services)/(routes)/services/gateways/serviceGateway";
 import { useDebounce } from "@/components/hooks";
 import { useEffect, useState } from "react";
@@ -40,6 +39,7 @@ const HomePage = () => {
   useEffect(() => {
     setIsLoading(true);
     getAllServices();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /**
@@ -79,8 +79,8 @@ const HomePage = () => {
 
         {rows.map((tool) => (
           <Card
-            onClick={() => router.push(tool.href)}
-            key={tool.href}
+            onClick={() => router.push(tool.href || '/services')}
+            key={tool.id}
             className="p-4 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer"
           >
             <div className="flex items-center gap-x-4">
@@ -93,10 +93,10 @@ const HomePage = () => {
                 </div>
                 <div className="font-semibold">
                   Serviço:{" "}
-                  <label className="text-neutral-500">{tool.service}</label>
+                  <label className="text-neutral-500">{tool.name}</label>
                 </div>
                 <div className="font-semibold">
-                  Status: {validateColorText(tool.status)}
+                  Status: {validateColorText(tool.status.toString())}
                 </div>
               </div>
             </div>

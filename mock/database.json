@@ -2,7 +2,7 @@
     "services": [
         {
             "id": 1,
-            "service": "SERPRO",
+            "name": "SERPRO",
             "status": "up",
             "icon": "ScreenShare",
             "href": "/services",
@@ -11,7 +11,7 @@
         },
         {
             "id": 2,
-            "service": "Conselho Nacional de Justiça",
+            "name": "Conselho Nacional de Justiça",
             "status": "warning",
             "icon": "ScreenShare",
             "href": "/services",
@@ -20,7 +20,7 @@
         },
         {
             "id": 3,
-            "service": "Tribunal de Justiça",
+            "name": "Tribunal de Justiça",
             "status": "error",
             "icon": "ScreenShare",
             "href": "/services",
