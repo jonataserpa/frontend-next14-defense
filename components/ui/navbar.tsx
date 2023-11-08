@@ -1,16 +1,22 @@
+"use client"
+
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
 import { MobileSidebar } from "../mobile-sidebar";
-import HomePage from "@/app/(dashboard)/(routes)/dashboard/page";
+import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+    const router = useRouter();
+
     return (
         <div className="flex items-center p-4">
             <Button variant="ghost" size="icon" className="md:hidden">
                 <MobileSidebar />
             </Button>
             <div className="flex w-full justify-end">
-                <Button></Button>
+                <Button onClick={() => router.push('services')}>
+                    <ArrowRight className="w-5 h-5" />
+                </Button>
             </div>            
         </div>
     )

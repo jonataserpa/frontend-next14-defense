@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { tools } from "@/constants";
 
-export default function HomePage() {
+const HomePage = () => {
     const router = useRouter();
 
     const validateColorText = (status: string) => {
@@ -57,4 +57,6 @@ export default function HomePage() {
         </div>
       </div>
     );
-  }
+}
+
+export default HomePage;

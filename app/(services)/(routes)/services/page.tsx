@@ -2,11 +2,7 @@ import TablePage from "@/components/table";
 import Navbar from "@/components/ui/navbar";
 import Sidebar from "@/components/ui/sidebar";
 
-const ServicesPage = async ({
-    children,
-  }: {
-    children: React.ReactNode
-  }) => {
+const ServicesPage = async () => {
   
     return ( 
       <div className="h-full relative">
