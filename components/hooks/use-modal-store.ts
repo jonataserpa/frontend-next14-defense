@@ -3,7 +3,7 @@ import { create } from "zustand";
 
 export type ModalType = "createService" | "editService" | "deleteService";
 
-interface ModalData {
+export interface ModalData {
   server?: IDefenseProps;
   apiUrl?: string;
   query?: Record<string, any>;

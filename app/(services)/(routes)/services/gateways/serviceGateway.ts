@@ -90,11 +90,11 @@ const create = async (
 };
 
 const updateById = async (
-  id: string,
-  dados: IDefenseProps
+  id: number | undefined,
+  data: IDefenseProps
 ): Promise<void | Error> => {
   try {
-    await ApiService.put(`/services/${id}`, dados);
+    await ApiService.put(`/services/${id}`, data);
     toast.success("Serviço atualizado com sucesso.");
   } catch (error) {
     handleApiErrors(error as AxiosError, "Erro ao atualizar o registro.");
@@ -102,9 +102,10 @@ const updateById = async (
   }
 };
 
-const deleteById = async (id: string | undefined): Promise<void | Error> => {
+const deleteById = async (id: number | undefined): Promise<void | Error> => {
   try {
-    await ApiService.delete(`/services/`, id);
+    await ApiService.delete(`/services/${id}`, id);
+    toast.success("Serviço removido com sucesso.");
   } catch (error) {
     handleApiErrors(error as AxiosError, "Erro ao apagar o registro.");
     throw error;

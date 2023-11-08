@@ -3,20 +3,22 @@
 import TablePage from "@/components/table";
 import Navbar from "@/components/ui/navbar";
 import Sidebar from "@/components/ui/sidebar";
-import { IDefenseProps } from "./interfaces/iDefense.interface";
+import { IDefenseProps, StatusType } from "./interfaces/iDefense.interface";
 import { useEffect, useState } from "react";
 import { useDebounce } from "@/components/hooks";
 import { ServiceGateway } from "./gateways/serviceGateway";
 import { Environment } from "@/components/environment";
+import { ModalData, useModal } from "@/components/hooks/use-modal-store";
 
 const ServicesPage = () => {
+  const { onOpen } = useModal();
   const { debounce } = useDebounce();
   const [isLoading, setIsLoading] = useState(true);
   const [totalCount, setTotalCount] = useState(0);
   const [rows, setRows] = useState<IDefenseProps[]>([]);
 
   /**
-   * Get all users
+   * Get all services
    */
   function getAllServices() {
     debounce(() => {
@@ -48,36 +50,26 @@ const ServicesPage = () => {
    */
   const handleDelete = (id: number | undefined) => {
     if (confirm("Realmente deseja apagar?")) {
-      /*CattlesService.deleteById(id).then((result) => {
+      ServiceGateway.deleteById(id).then((result) => {
         if (result instanceof Error) {
           alert(result.message);
         } else {
           setRows((oldRows) => [
-            ...oldRows.filter((oldRow) => oldRow.id.toString() !== id),
+            ...oldRows.filter((oldRow) => oldRow.id !== id),
           ]);
-          alert("Registro apagado com sucesso!");
         }
-      });*/
+      });
     }
   };
 
   /**
-   * Edit cattles modal dialog
+   * Edit services modal dialog
    */
-  function handleEdit(cattlesValue: IDefenseProps) {
-    /*setTitleModal("Edite Vaca");
-    if (cattlesValue.children && cattlesValue.children.length === 0) {
-      cattlesValue.children = [
-        {
-          id: uuidv4(),
-          name: "",
-          namefather: "",
-          dateborn: null,
-          observacion: "",
-          proprietary: "",
-        },
-      ];
-    }*/
+  function handleEdit(service: IDefenseProps) {
+    const serviceValue: ModalData = {
+      server: service,
+    }
+    onOpen("createService", serviceValue);
   }
 
   return (

@@ -1,6 +1,5 @@
 "use client";
 
-import qs from "query-string";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -48,21 +47,21 @@ const formSchema = z.object({
 export const CreateServiceModal = () => {
   const { isOpen, onClose, type, data } = useModal();
   const router = useRouter();
-  const params = useParams();
   const isModalOpen = isOpen && type === "createService";
   const { server } = data;
 
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      status: "",
+      name: server?.name || "",
+      status: server?.status || "",
     }
   });
 
   useEffect(() => {
     if (server) {
       form.setValue("name", server.name);
+      form.setValue("status", server.status);
     } else {
       form.setValue("name", '');
     }
@@ -78,7 +77,12 @@ export const CreateServiceModal = () => {
         color: "text-violet-500",
         bgColor: "bg-violet-500/10"
       }
-      await ServiceGateway.create(service);
+      console.log('server:: ', server);
+      if (server === undefined) {
+        await ServiceGateway.create(service);
+      } else {
+        await ServiceGateway.updateById(server?.id, service);
+      }
       form.reset();
       router.refresh();
       router.push('/dashboard');
@@ -135,6 +139,7 @@ export const CreateServiceModal = () => {
                     <Select
                       disabled={isLoading}
                       onValueChange={field.onChange}
+                      defaultValue={field.value}
                     >
                       <FormControl>
                         <SelectTrigger className="bg-zinc-300/50 border-0 focus:ring-0 text-black ring-offset-0 focus:ring-offset-0 capitalize outline-none">

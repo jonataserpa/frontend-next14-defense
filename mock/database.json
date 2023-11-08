@@ -19,37 +19,18 @@
       "bgColor": "bg-violet-500/10"
     },
     {
-      "id": 3,
       "name": "Tribunal de Justiça",
       "status": "error",
-      "icon": "ScreenShare",
-      "href": "/services",
       "color": "text-violet-500",
-      "bgColor": "bg-violet-500/10"
+      "bgColor": "bg-violet-500/10",
+      "id": 3
     },
     {
       "name": "Jonata Serpa",
       "status": "warning",
+      "color": "text-violet-500",
+      "bgColor": "bg-violet-500/10",
       "id": 4
-    },
-    {
-      "name": "tttttttttttttt",
-      "status": "error",
-      "id": 5
-    },
-    {
-      "name": "bbbbbbbbb",
-      "status": "up",
-      "color": "text-violet-500",
-      "bgColor": "bg-violet-500/10",
-      "id": 6
-    },
-    {
-      "name": "easyfood",
-      "status": "up",
-      "color": "text-violet-500",
-      "bgColor": "bg-violet-500/10",
-      "id": 7
     }
   ]
 }

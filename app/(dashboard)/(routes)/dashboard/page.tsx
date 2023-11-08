@@ -17,7 +17,7 @@ const HomePage = () => {
   const [rows, setRows] = useState<IDefenseProps[]>([]);
 
   /**
-   * Get all users
+   * Get all services
    */
   function getAllServices() {
     debounce(() => {
