@@ -28,7 +28,7 @@ const TablePage = ({ rows, handleDelete, handleEdit }: IRows) => {
           <div className="flex w-full justify-end px-12 -my-5">
             <ActionTooltip side="right" align="center" label="Cadastrar serviço ?">
               <button onClick={() => {}} className="group flex items-center">
-                <div className="flex mx-3 h-[48px] w-[48px] rounded-[24px] group-hover:rounded-[16px] transition-all items-center justify-center bg-background group-hover:bg-black dark:bg-[#1E1F22] bg-[#2d323a]">
+                <div className="flex mx-3 h-[48px] w-[48px] rounded-[24px] group-hover:rounded-[16px] transition-all items-center justify-center bg-background group-hover:bg-black text-primary dark:bg-[#1E1F22] bg-[#371342]">
                   <Plus
                     className="group-hover:text-white transition text-white"
                     size={25}
