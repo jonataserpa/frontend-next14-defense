@@ -1,3 +1,4 @@
+import { IRows } from "@/app/(services)/(routes)/services/interfaces/iRows.interface";
 import {
   Table,
   TableBody,
@@ -9,7 +10,11 @@ import {
 } from "@/components/ui/table";
 import { Delete, Pencil } from "lucide-react";
 
-const TablePage = () => {
+const TablePage = ({ rows, handleDelete, handleEdit }: IRows) => {
+  if (rows && rows.length === 0) {
+    return <div style={{ marginLeft: 20 }}>Nenhum serviço cadastrado...</div>;
+  }
+
   return (
     <div>
       <div className="mb-8 space-y-4">
@@ -22,7 +27,6 @@ const TablePage = () => {
       </div>
       <div className="px-4 md:px-20 lg:px-32">
         <Table>
-          <TableCaption>lista serviços</TableCaption>
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">ID</TableHead>
@@ -33,28 +37,22 @@ const TablePage = () => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            <TableRow>
-              <TableCell className="font-medium">1</TableCell>
-              <TableCell>UP</TableCell>
-              <TableCell>SERPRO</TableCell>
-              <TableCell className="text-right">
-                <Pencil />
-              </TableCell>
-              <TableCell className="text-right">
-                <Delete />
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell className="font-medium">2</TableCell>
-              <TableCell>warning</TableCell>
-              <TableCell>Conselho Nacional de Justiça</TableCell>
-              <TableCell className="text-right">
-                <Pencil />
-              </TableCell>
-              <TableCell className="text-right">
-                <Delete />
-              </TableCell>
-            </TableRow>
+            {rows &&
+              rows.length > 0 &&
+              rows.map((row) => (
+                <TableRow key={row.id}>
+                  <TableCell className="font-medium">{row.id}</TableCell>
+                  <TableCell>{row.status}</TableCell>
+                  <TableCell>{row.service}</TableCell>
+
+                  <TableCell  className="text-right">
+                    <Pencil onClick={() => handleEdit(row)} />
+                  </TableCell>
+                  <TableCell className="text-right">
+                    <Delete onClick={() => handleDelete(row.id)} />
+                  </TableCell>
+                </TableRow>
+              ))}
           </TableBody>
         </Table>
       </div>

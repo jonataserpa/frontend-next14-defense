@@ -1,0 +1,31 @@
+{
+    "services": [
+        {
+            "id": 1,
+            "service": "SERPRO",
+            "status": "up",
+            "icon": "ScreenShare",
+            "href": "/services",
+            "color": "text-violet-500",
+            "bgColor": "bg-violet-500/10"
+        },
+        {
+            "id": 2,
+            "service": "Conselho Nacional de Justiça",
+            "status": "warning",
+            "icon": "ScreenShare",
+            "href": "/services",
+            "color": "text-violet-500",
+            "bgColor": "bg-violet-500/10"
+        },
+        {
+            "id": 3,
+            "service": "Tribunal de Justiça",
+            "status": "error",
+            "icon": "ScreenShare",
+            "href": "/services",
+            "color": "text-violet-500",
+            "bgColor": "bg-violet-500/10"
+        }
+    ]
+}

@@ -16,7 +16,7 @@ const SheetClose = SheetPrimitive.Close
 const SheetPortal = ({
   ...props
 }: SheetPrimitive.DialogPortalProps) => (
-  <SheetPrimitive.Portal />
+  <SheetPrimitive.Portal {...props} />
 )
 SheetPortal.displayName = SheetPrimitive.Portal.displayName
 
@@ -133,8 +133,6 @@ SheetDescription.displayName = SheetPrimitive.Description.displayName
 
 export {
   Sheet,
-  SheetPortal,
-  SheetOverlay,
   SheetTrigger,
   SheetClose,
   SheetContent,

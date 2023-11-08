@@ -1,8 +1,9 @@
 import { ScreenShare } from "lucide-react";
+import { IDefenseProps } from "./app/(services)/(routes)/services/interfaces/iDefense.interface";
 
 export const MAX_FREE_COUNTS = 5;
 
-export const tools = [
+export const services: IDefenseProps[] = [
   {
     id: 1,
     service: 'SERPRO',
