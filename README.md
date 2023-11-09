@@ -33,6 +33,7 @@ $ npm run dev
 # test
 $ npm test
 
+# se desejar usar uma imagem docker: 
 # docker-compose permissao
 $ npm sudo chmod +x .docker/entrypoint.sh
 
