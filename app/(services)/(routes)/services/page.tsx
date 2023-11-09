@@ -9,6 +9,7 @@ import { useDebounce } from "@/components/hooks";
 import { ServiceGateway } from "./gateways/serviceGateway";
 import { Environment } from "@/components/environment";
 import { ModalData, useModal } from "@/components/hooks/use-modal-store";
+import { routes } from "@/app/constants";
 
 const ServicesPage = () => {
   const { onOpen } = useModal();
@@ -75,7 +76,7 @@ const ServicesPage = () => {
   return (
     <div className="h-full relative">
       <div className="hidden h-full md:flex md:w-72 md:flex-col md:fixed md:inset-y-0 z-80 bg-gray-900">
-        <Sidebar />
+        <Sidebar routes={routes} />
       </div>
       <main className="md:pl-72 pb-10">
         <Navbar />

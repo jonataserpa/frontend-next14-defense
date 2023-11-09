@@ -25,7 +25,7 @@ const TablePage = ({ rows, handleDelete, handleEdit }: IRows) => {
           Cadastro dos Serviços
         </h2>
         <p className="px-4 md:px-20 text-muted-foreground font-light text-sm md:text-lg text-left">
-          Listagem e cadastro dos dados do serviço desejado.
+          Listagem e cadastro dos serviços.
           <div className="flex w-full justify-end px-12 -my-5">
             <ActionTooltip side="right" align="center" label="Cadastrar serviço ?">
               <button onClick={() => onOpen("createService")} className="group flex items-center ">

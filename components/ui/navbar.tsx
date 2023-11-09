@@ -16,9 +16,9 @@ const Navbar = () => {
                 <MobileSidebar />
             </Button>
             <div className="flex w-full justify-end">
-            <ActionTooltip side="right" align="center" label={ currentPage === '/dashboard' ? "Ir para cadastro ?" : "Voltar para dashboard" }>
-                <Button onClick={() => currentPage === '/dashboard' ? router.push('services') : router.push('dashboard')}>
-                    {currentPage  === '/dashboard' ? (
+            <ActionTooltip side="right" align="center" label={ currentPage === '/' ? "Ir para cadastro ?" : "Voltar para dashboard" }>
+                <Button onClick={() => currentPage === '/' ? router.push('services') : router.push('/')}>
+                    {currentPage  === '/' ? (
                         <ArrowRight className="w-5 h-5" />
                     ): (
                         <ArrowLeft className="w-5 h-5" />

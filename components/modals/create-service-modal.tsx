@@ -29,10 +29,10 @@ import {
 } from "@/components/ui/select";
 import { useEffect } from "react";
 import { useModal } from "../hooks/use-modal-store";
-import { statusSelect } from "@/constants";
 import { Button } from "../ui/button";
 import { ServiceGateway } from "@/app/(services)/(routes)/services/gateways/serviceGateway";
 import { IDefenseProps, StatusType } from "@/app/(services)/(routes)/services/interfaces/iDefense.interface";
+import { statusSelect } from "@/app/constants";
 
 const formSchema = z.object({
   name: z
@@ -85,7 +85,7 @@ export const CreateServiceModal = () => {
       }
       form.reset();
       router.refresh();
-      router.push('/dashboard');
+      router.push('/');
       onClose();
     } catch (error) {
       console.log(error);
