@@ -12,6 +12,13 @@ Frontend projeto: Lista Defensoria do Estado do Rio Grande do Sul
 - Mock: Json-server
 - Docker e docker-compose
 
+Obs: - Tratamentos de erros da api: handleApiErrors (400, 404, 500)
+     - Camada de Service separado por ServiceGateway e interfaces:
+        - getAll, create, getById, updateById, deleteById
+     - hooks personalizados
+        - useDebounce e modal
+     - Contants e Componentes separadas e organizadas;   
+
 ## Defensoria do Estado do Rio Grande do Sul
  - CRUD: Modal e Form inputs use radix-ui 
 
