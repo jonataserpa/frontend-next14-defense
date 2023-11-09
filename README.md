@@ -1,8 +1,8 @@
 ## Description
 
 Frontend projeto: Lista Defensoria do Estado do Rio Grande do Sul
-- Front: React.js
-- Framework: Next.js
+- Front: React.js v.18
+- Framework: Next.js v.14
 - UI: radix-ui
 - Icons: lucide-react
 - CSS: tailwind
@@ -10,6 +10,7 @@ Frontend projeto: Lista Defensoria do Estado do Rio Grande do Sul
 - Gerenciamento de estado: zustand
 - Test-unitario: Jest 
 - Mock: Json-server
+- Docker e docker-compose
 
 ## Defensoria do Estado do Rio Grande do Sul
  - CRUD: Modal e Form inputs use radix-ui 
@@ -31,6 +32,13 @@ $ npm run dev
 
 # test
 $ npm test
+
+# docker-compose permissao
+$ npm sudo chmod +x .docker/entrypoint.sh
+
+# docker-compose up
+$ sudo docker-compose up
+
 ```
 ## Painel
 
