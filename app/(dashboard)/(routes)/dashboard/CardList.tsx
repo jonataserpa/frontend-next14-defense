@@ -1,19 +1,16 @@
-import { Card } from "@/components/ui/card";
+/*"use client";
+
 import { ArrowRight, ScreenShare } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { IDefenseProps } from "@/app/(services)/(routes)/services/interfaces/iDefense.interface";
 
-type Props = {
-  tool: any;
+type TCardProps = {
+  tool: IDefenseProps;
 };
 
-const CardList = ({ tool }: Props) => {
+const CardList = ({ tool }: TCardProps) => {
   const router = useRouter();
 
-  /**
-   * Validate Color
-   * @param status
-   * @returns
-   */
   const validateColorText = (status: string) => {
     if (status === "up") {
       return <label className="text-green-600">{status}</label>;
@@ -55,3 +52,4 @@ const CardList = ({ tool }: Props) => {
 };
 
 export default CardList;
+*/

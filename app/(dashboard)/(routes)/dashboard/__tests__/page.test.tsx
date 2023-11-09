@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { IDefenseProps } from "@/app/(services)/(routes)/services/interfaces/iDefense.interface";
 import HomePage from "../page";
 import "@testing-library/jest-dom";
@@ -31,10 +31,10 @@ jest.mock("next/navigation", () => ({
   },
 }));
 
-describe("HomePage", () => {
+describe("HomePage - List services", () => {
   it('should render "No services" when the array is empty', () => {
     // ARRANGE
-    render(<HomePage rows={[]} />);
+    render(<HomePage rows={[]}/>);
 
     //ACT
     const message = screen.getByText("Carregando serviços...");
@@ -43,7 +43,7 @@ describe("HomePage", () => {
     expect(message).toBeInTheDocument();
   });
 
-  it("should render a list with the correct number of items", async () => {
+  it("should render a list services with the correct number of items", async () => {
     // ARRANGE
     render(<HomePage rows={mockTodos} />);
 
