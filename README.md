@@ -5,7 +5,7 @@ Frontend projeto: Lista Defensoria do Estado do Rio Grande do Sul
 - Framework: Next.js v.14
 - UI: radix-ui
 - Icons: lucide-react
-- CSS: tailwind
+- CSS: tailwind - Responsible (Mobile)
 - Validation: useForm e zod
 - Gerenciamento de estado: zustand
 - Test-unitario: Jest 
@@ -52,3 +52,7 @@ $ sudo docker-compose up
 ## Modal
 
 ![Modal](https://cdn.discordapp.com/attachments/1083115321935798314/1172263310717091881/image.png?ex=655fae48&is=654d3948&hm=889229ec7cf4056c8e40fb01cd112df64367ab3aacf522b7e11d09bde661dcb8&)
+
+## Phone
+
+![Mobile](https://cdn.discordapp.com/attachments/1083115321935798314/1172271386786545695/painel-phone.png?ex=655fb5ce&is=654d40ce&hm=5c5eda063c7e5a0ed825024de4eb0fb015693e254cf66be28932161b22ac1173&)
