@@ -24,13 +24,6 @@
       "color": "text-violet-500",
       "bgColor": "bg-violet-500/10",
       "id": 3
-    },
-    {
-      "name": "Jonata Serpa",
-      "status": "warning",
-      "color": "text-violet-500",
-      "bgColor": "bg-violet-500/10",
-      "id": 4
     }
   ]
 }
