@@ -28,6 +28,9 @@ $ npm run mock
 
 # dev
 $ npm run dev
+
+# test
+$ npm test
 ```
 ## Painel
 
