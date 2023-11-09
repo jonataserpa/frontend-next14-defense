@@ -19,7 +19,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import {
   Select,
   SelectContent,
@@ -77,7 +77,6 @@ export const CreateServiceModal = () => {
         color: "text-violet-500",
         bgColor: "bg-violet-500/10"
       }
-      console.log('server:: ', server);
       if (server === undefined) {
         await ServiceGateway.create(service);
       } else {

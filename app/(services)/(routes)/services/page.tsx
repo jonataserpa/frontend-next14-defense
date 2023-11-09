@@ -3,18 +3,17 @@
 import TablePage from "@/components/table";
 import Navbar from "@/components/ui/navbar";
 import Sidebar from "@/components/ui/sidebar";
-import { IDefenseProps, StatusType } from "./interfaces/iDefense.interface";
+import { IDefenseProps } from "./interfaces/iDefense.interface";
 import { useEffect, useState } from "react";
 import { useDebounce } from "@/components/hooks";
 import { ServiceGateway } from "./gateways/serviceGateway";
-import { Environment } from "@/components/environment";
 import { ModalData, useModal } from "@/components/hooks/use-modal-store";
 import { routes } from "@/app/constants";
 
 const ServicesPage = () => {
   const { onOpen } = useModal();
   const { debounce } = useDebounce();
-  const [isLoading, setIsLoading] = useState(true);
+  const [_, setIsLoading] = useState(true);
   const [totalCount, setTotalCount] = useState(0);
   const [rows, setRows] = useState<IDefenseProps[]>([]);
 
@@ -84,6 +83,7 @@ const ServicesPage = () => {
           rows={rows}
           handleDelete={handleDelete}
           handleEdit={handleEdit}
+          totalCount={totalCount}
         />
       </main>
     </div>

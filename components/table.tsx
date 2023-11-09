@@ -2,6 +2,7 @@ import { IRows } from "@/app/(services)/(routes)/services/interfaces/iRows.inter
 import {
   Table,
   TableBody,
+  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -11,7 +12,7 @@ import { Delete, Pencil, Plus } from "lucide-react";
 import { ActionTooltip } from "./action-tooltip";
 import { useModal } from "./hooks/use-modal-store";
 
-const TablePage = ({ rows, handleDelete, handleEdit }: IRows) => {
+const TablePage = ({ rows, handleDelete, handleEdit, totalCount }: IRows) => {
   const { onOpen } = useModal();
 
   if (rows && rows.length === 0) {
@@ -27,8 +28,15 @@ const TablePage = ({ rows, handleDelete, handleEdit }: IRows) => {
         <p className="px-4 md:px-20 text-muted-foreground font-light text-sm md:text-lg text-left">
           Listagem e cadastro dos serviços.
           <div className="flex w-full justify-end px-12 -my-5">
-            <ActionTooltip side="right" align="center" label="Cadastrar serviço ?">
-              <button onClick={() => onOpen("createService")} className="group flex items-center ">
+            <ActionTooltip
+              side="right"
+              align="center"
+              label="Cadastrar serviço ?"
+            >
+              <button
+                onClick={() => onOpen("createService")}
+                className="group flex items-center "
+              >
                 <div className="flex mx-3 h-[48px] w-[48px] rounded-[24px] group-hover:rounded-[16px] transition-all items-center justify-center group-hover:bg-black bg-current	">
                   <Plus
                     className="group-hover:text-white transition text-white"
@@ -61,18 +69,38 @@ const TablePage = ({ rows, handleDelete, handleEdit }: IRows) => {
                   <TableCell>{row.status}</TableCell>
 
                   <TableCell className="text-right">
-                    <ActionTooltip side="right" align="center" label="Editar serviço ?">                      
-                      <Pencil className="text-teal-700" onClick={() => handleEdit(row)} />
+                    <ActionTooltip
+                      side="right"
+                      align="center"
+                      label="Editar serviço ?"
+                    >
+                      <Pencil
+                        className="text-teal-700"
+                        onClick={() => handleEdit(row)}
+                      />
                     </ActionTooltip>
                   </TableCell>
                   <TableCell className="text-right">
-                    <ActionTooltip side="right" align="center" label="Excluir serviço ?">
-                      <Delete className="text-red-500" onClick={() => handleDelete(row.id)} />
+                    <ActionTooltip
+                      side="right"
+                      align="center"
+                      label="Excluir serviço ?"
+                    >
+                      <Delete
+                        className="text-red-500"
+                        onClick={() => handleDelete(row.id)}
+                      />
                     </ActionTooltip>
                   </TableCell>
                 </TableRow>
               ))}
           </TableBody>
+          <TableCaption>
+            <div className="flex flex-row gap-2">
+              <p>Total: </p>
+              <strong>{totalCount}</strong>
+            </div>
+          </TableCaption>
         </Table>
       </div>
     </div>
