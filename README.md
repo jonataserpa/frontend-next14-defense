@@ -1,10 +1,10 @@
 ## Painel
 
-![Painel](https://cdn.discordapp.com/attachments/1083115321935798314/1172250664961851514/painel.png?ex=655fa281&is=654d2d81&hm=b2c8bd2a0f201fd2d096905f15f0d5baf41dbf9b73e7ca423d8cac269c693cbb&)
+![Painel](https://cdn.discordapp.com/attachments/1083115321935798314/1172478129172905984/painel.png?ex=65607659&is=654e0159&hm=b30b38d7d34db1303e9f4a058cf04a31f910ec5988f313fbab6bdbf36931a03d&)
 
 ## Cadastro
 
-![Cadastro](https://cdn.discordapp.com/attachments/1083115321935798314/1172256551260659804/cadastro.png?ex=655fa7fd&is=654d32fd&hm=7fb445ee4f11166c880629b03f582c721d465397b08fa7c4843d8270f410d370&)
+![Cadastro](https://cdn.discordapp.com/attachments/1083115321935798314/1172478594585481216/cadastro.png?ex=656076c8&is=654e01c8&hm=633d8ad1f2fb8b33bdb4f14dc5e4a87c53a207f018b5ed9f29d01a811d9e7d9f&)
 
 ## Modal
 
