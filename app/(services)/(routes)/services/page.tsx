@@ -42,7 +42,7 @@ const ServicesPage = () => {
     setIsLoading(true);
     getAllServices();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rows]);
+  }, []);
 
   /**
    * Handle delete item
@@ -58,6 +58,7 @@ const ServicesPage = () => {
             ...oldRows.filter((oldRow) => oldRow.id !== id),
           ]);
           setTotalCount(rows.length);
+          getAllServices();
         }
       });
     }
