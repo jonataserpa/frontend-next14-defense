@@ -71,6 +71,4 @@ $ sudo docker-compose up
 
 ## Production example
 
-- Link:
-
- [link](https://next14-defense.vercel.app/)
+- Link: [https://next14-defense.vercel.app/](https://next14-defense.vercel.app/)
