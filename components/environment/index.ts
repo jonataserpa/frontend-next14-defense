@@ -14,5 +14,6 @@ export const Environment = {
     /**
      * Url base de consultado dos dados dessa aplicação
      */
-    URL_BASE: "https://nest.jonataserpa.net",
+    URL_BASE: "https://nest.jonataserpa.net/api/v1",
   };
+  

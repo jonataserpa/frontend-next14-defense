@@ -74,8 +74,6 @@ export const CreateServiceModal = () => {
       const service: IDefenseProps = {
         name: values.name,
         status: values.status,
-        color: "text-violet-500",
-        bgColor: "bg-violet-500/10"
       }
       if (server === undefined) {
         await ServiceGateway.create(service);

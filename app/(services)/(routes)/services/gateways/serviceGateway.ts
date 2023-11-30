@@ -39,12 +39,12 @@ export const handleApiErrors = (error: AxiosError, message: string) => {
 
 const getAll = async (): Promise<TServicesWithTotalCount | Error> => {
   try {
-    const url = "/services?_sort=id&_order=desc";
+    const url = "/service";
     const { data } = await ApiService.get(url);
 
     if (data) {
       return {
-        data: data,
+        data: data.data,
         totalCount: data.length,
       };
     }
@@ -58,7 +58,7 @@ const getAll = async (): Promise<TServicesWithTotalCount | Error> => {
 
 const getById = async (id: number): Promise<IDefenseProps | Error> => {
   try {
-    const { data } = await ApiService.get(`/services/${id}`);
+    const { data } = await ApiService.get(`/service/${id}`);
 
     if (data) {
       return data;
@@ -75,7 +75,7 @@ const create = async (
   dados: Omit<IDefenseProps, "id">
 ): Promise<string | Error> => {
   try {
-    const { data } = await ApiService.post("/services", dados);
+    const { data } = await ApiService.post("/service", dados);
 
     if (data) {
       toast.success("Serviço criado com sucesso.");
@@ -94,7 +94,7 @@ const updateById = async (
   data: IDefenseProps
 ): Promise<void | Error> => {
   try {
-    await ApiService.put(`/services/${id}`, data);
+    await ApiService.put(`/service/${id}`, data);
     toast.success("Serviço atualizado com sucesso.");
   } catch (error) {
     handleApiErrors(error as AxiosError, "Erro ao atualizar o registro.");
@@ -104,7 +104,7 @@ const updateById = async (
 
 const deleteById = async (id: number | undefined): Promise<void | Error> => {
   try {
-    await ApiService.delete(`/services/${id}`, id);
+    await ApiService.delete(`/service/${id}`, id);
     toast.success("Serviço removido com sucesso.");
   } catch (error) {
     handleApiErrors(error as AxiosError, "Erro ao apagar o registro.");
