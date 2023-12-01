@@ -69,6 +69,6 @@ $ sudo docker-compose up
 
 ```
 
-## Exemplo em produção na Vercel
+## Example production on Vercel
 
 - Link: [https://next14-defense.vercel.app/](https://next14-defense.vercel.app/)
