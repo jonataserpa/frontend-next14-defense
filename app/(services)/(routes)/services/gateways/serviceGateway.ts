@@ -45,7 +45,7 @@ const getAll = async (): Promise<TServicesWithTotalCount | Error> => {
     if (data) {
       return {
         data: data.data,
-        totalCount: data.length,
+        totalCount: data.headers,
       };
     }
 
