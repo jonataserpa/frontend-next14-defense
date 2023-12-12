@@ -7,6 +7,7 @@ import Toast from "@/components/toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  manifest: "/manifest.json",
   title: "Defensoria do Estado do Rio Grande do Sul",
   description: "Blue Tecnologia",
 };
