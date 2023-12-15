@@ -48,7 +48,7 @@ describe("HomePage - List services", () => {
     render(<HomePage rows={mockTodos} />);
 
     // ACT
-    const firstItem = screen.getAllByTestId("card")[0];
+    const firstItem = screen.getAllByTestId("SERPRO")[0];
 
     // ASSERT
     expect(firstItem).toHaveTextContent("SERPRO");
