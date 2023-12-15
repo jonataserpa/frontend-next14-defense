@@ -33,6 +33,7 @@ Frontend projeto: Lista Defensoria do Estado do Rio Grande do Sul
 - Validation: useForm e zod
 - Gerenciamento de estado: zustand
 - Test-unitario: Jest 
+- Test e2e: Cypress
 - Mock: Json-server
 - Docker e docker-compose
 
