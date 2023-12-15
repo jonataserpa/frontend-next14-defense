@@ -51,7 +51,7 @@ const HomePage = ({ rows }: any) => {
               onClick={() => router.push(tool.href || "/services")}
               key={tool.id}
               className="p-4 border-black/5 border-r-4 ring-1 rounded-lg flex items-center justify-between hover:shadow-md transition cursor-pointer"
-              data-testid="card"
+              data-testid={tool.name}
             >
               <div className="flex items-center gap-x-4">
                 <div className="p-2 w-fit rounded-md bg-violet-500/10">

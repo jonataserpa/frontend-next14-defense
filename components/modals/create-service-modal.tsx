@@ -121,6 +121,7 @@ export const CreateServiceModal = () => {
                         className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
                         placeholder="Descrição do serviço"
                         {...field}
+                        data-testid="name"
                       />
                     </FormControl>
                     <FormMessage />
@@ -129,7 +130,7 @@ export const CreateServiceModal = () => {
               />
               <FormField
                 control={form.control}
-                name="status"
+                name="status"                
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Status</FormLabel>
@@ -137,6 +138,8 @@ export const CreateServiceModal = () => {
                       disabled={isLoading}
                       onValueChange={field.onChange}
                       defaultValue={field.value}
+                      data-testid="status"
+                      name="status"
                     >
                       <FormControl>
                         <SelectTrigger className="bg-zinc-300/50 border-0 focus:ring-0 text-black ring-offset-0 focus:ring-offset-0 capitalize outline-none">
@@ -144,14 +147,15 @@ export const CreateServiceModal = () => {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        {statusSelect.map((type) => (
-                          <SelectItem
-                            key={type.id}
-                            value={type.description}
-                          >
-                            {type.description}
-                          </SelectItem>
-                        ))}
+                          {statusSelect.map((type) => (
+                            <SelectItem
+                              key={type.id}
+                              value={type.description}
+                              id={type.description}
+                            >
+                              {type.description}
+                            </SelectItem>
+                          ))}
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -161,7 +165,7 @@ export const CreateServiceModal = () => {
             </div>
             <DialogFooter className="bg-gray-100 px-6 py-4">
               
-              <Button variant="default" disabled={isLoading}>
+              <Button variant="default" disabled={isLoading} data-testid="save">
                 Salvar
               </Button>
             </DialogFooter>

@@ -36,6 +36,7 @@ const TablePage = ({ rows, handleDelete, handleEdit, totalCount }: IRows) => {
               <button
                 onClick={() => onOpen("createService")}
                 className="group flex items-center "
+                data-testid="create-service"
               >
                 <div className="flex mx-3 h-[48px] w-[48px] rounded-[24px] group-hover:rounded-[16px] transition-all items-center justify-center group-hover:bg-black bg-current	">
                   <Plus

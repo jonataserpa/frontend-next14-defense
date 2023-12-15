@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": ["dom", "dom.iterable", "esnext"],    
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -22,6 +22,7 @@
       "@/*": ["./*"]
     }
   },
+  "types": ["cypress", "node", "./support"],
   "ts-node": {
     "compilerOptions": {
       "module": "ESNext",
@@ -34,7 +35,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "jest.config.js",
-    "cypress.config.js"
+    "cypress.config.ts",
+    "cypress",
   ],
   "exclude": ["node_modules"]
 }
