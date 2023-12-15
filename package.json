@@ -14,8 +14,6 @@
     "cypress:run": "cypress run"
   },
   "dependencies": {
-    "@cypress/react": "^8.0.0",
-    "@cypress/webpack-dev-server": "^3.7.1",
     "@hookform/resolvers": "^3.3.2",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-label": "^2.0.2",
