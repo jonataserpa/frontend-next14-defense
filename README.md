@@ -20,7 +20,7 @@
 
 ## Cypress - test e2e
 
-![test](https://cdn.discordapp.com/attachments/1083115321935798314/1177576489827450880/image.png?ex=65f43591&is=65e1c091&hm=7a0fa94cd27615e66fa5f52c3ee06941910fa31a9f26e6b712654f5336f88ecc&)
+![test](https://cdn.discordapp.com/attachments/1083115321935798314/1185256949596565554/image.png?ex=658ef38d&is=657c7e8d&hm=dccc17f571e6ba586475d9d13e47939e38ca1696b8cfb64b6b9a089b5f627e5b&)
 
 ## Description
 
